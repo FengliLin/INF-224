@@ -1,0 +1,4 @@
+<map id="cppu::SocketBuffer" name="cppu::SocketBuffer">
+<area shape="rect" id="node1" title="Preserves record boundaries when exchanging data between connected TCP/IP sockets...." alt="" coords="14,5,148,31"/>
+<area shape="rect" id="node2" href="$classcppu_1_1_t_c_p_connection.html" title="Connection with a given client. Each TCPConnection uses a different thread." alt="" coords="5,79,157,104"/>
+</map>

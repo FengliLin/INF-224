@@ -1,0 +1,7 @@
+<map id="cppu::TCPServer::run" name="cppu::TCPServer::run">
+<area shape="rect" id="node1" title="starts the TCPServer. run() binds an internal ServerSocket to port then starts an infinite loop that ..." alt="" coords="5,96,156,121"/>
+<area shape="rect" id="node2" href="$classcppu_1_1_server_socket.html#a255dfdccba51c7cdbcb6733c6c3f6ffa" title="Assigns the socket to the local address. The socket must be bound before using it." alt="" coords="231,5,368,44"/>
+<area shape="rect" id="node3" href="$classcppu_1_1_t_c_p_server.html#afc47ca4476d9c75d5ea88f73e2acd6d5" title="prints warning and error messages on the terminal." alt="" coords="220,68,379,93"/>
+<area shape="rect" id="node4" href="$classcppu_1_1_server_socket.html#af08ebcb886fc778d195fb622f7b96b8b" title="Accepts a new connection request and returns the corresponding socket. By default,..." alt="" coords="231,117,368,156"/>
+<area shape="rect" id="node5" href="$classcppu_1_1_t_c_p_server.html#abe314b95a31c88b479c81ec9bf123c65" title="creates a new connection that starts a new thread for listening this socket." alt="" coords="204,180,395,205"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="cppu::Socket::bind" name="cppu::Socket::bind">
+<area shape="rect" id="node1" title="Assigns the socket to the local address. Typically used for UDP/Datagram sockets,." alt="" coords="5,5,136,31"/>
+<area shape="rect" id="node2" href="$classcppu_1_1_socket.html#a73d529332eae6048b321b381354e6bea" title="Initializes a local INET4 address, returns 0 on success, &#45;1 otherwise." alt="" coords="184,5,389,31"/>
+</map>

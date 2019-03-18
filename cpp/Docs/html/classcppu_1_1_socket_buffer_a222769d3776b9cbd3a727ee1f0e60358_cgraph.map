@@ -1,0 +1,4 @@
+<map id="cppu::SocketBuffer::readLine" name="cppu::SocketBuffer::readLine">
+<area shape="rect" id="node1" title="Reads a line of text from a connected socket. readLine() receives one line of text sent by writeLine(..." alt="" coords="5,5,139,44"/>
+<area shape="rect" id="node2" href="$classcppu_1_1_socket.html#a37c382af52cc02f92c0e19a0c6e0e04f" title="Receives data from a connected socket. Reads at most len bytes from a TCP/IP socket using the Unix re..." alt="" coords="187,12,336,37"/>
+</map>

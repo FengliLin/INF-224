@@ -1,0 +1,4 @@
+<map id="cppu::SocketBuffer::writeLine" name="cppu::SocketBuffer::writeLine">
+<area shape="rect" id="node1" title="Sends a line of text to a connected socket. writeLine() sends one line of text that will be received ..." alt="" coords="5,5,139,44"/>
+<area shape="rect" id="node2" href="$classcppu_1_1_socket.html#aeac77f859159715e2d63a5a0dc118788" title="Sends data to a connected socket. Sends len bytes to a TCP/IP socket using the Unix send() function (..." alt="" coords="187,12,322,37"/>
+</map>

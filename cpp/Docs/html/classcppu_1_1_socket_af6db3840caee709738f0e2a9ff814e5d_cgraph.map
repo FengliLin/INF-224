@@ -1,0 +1,4 @@
+<map id="cppu::Socket::connect" name="cppu::Socket::connect">
+<area shape="rect" id="node1" title="Connects the socket to an address. Typically used for TCP/IP sockets on the client side,..." alt="" coords="5,5,158,31"/>
+<area shape="rect" id="node2" href="$classcppu_1_1_socket.html#aec26c9f6372f7ed2ec383fc98cbb6458" title="Initializes a remote INET4 address, returns 0 on success, &#45;1 otherwise." alt="" coords="206,5,378,31"/>
+</map>

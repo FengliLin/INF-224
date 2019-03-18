@@ -1,0 +1,218 @@
+\hypertarget{classcppu_1_1_socket_buffer}{}\section{cppu\+::Socket\+Buffer Class Reference}
+\label{classcppu_1_1_socket_buffer}\index{cppu::SocketBuffer@{cppu::SocketBuffer}}
+
+
+Preserves record boundaries when exchanging data between connected T\+C\+P/\+IP sockets. This class ensures that one call to \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} corresponds to one and exactly one call to \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} on the other side. This differs from the behavior of \mbox{\hyperlink{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}{Socket\+::send()}} and \mbox{\hyperlink{classcppu_1_1_socket_a37c382af52cc02f92c0e19a0c6e0e04f}{Socket\+::receive()}} because T\+C\+P/\+IP connected sockets do not preserve record boundaries. \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} and \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} solve this problem by automatically adding and searching for a separator between successive lines.  
+
+
+
+
+{\ttfamily \#include $<$cppsocket.\+h$>$}
+
+
+
+Inheritance diagram for cppu\+::Socket\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classcppu_1_1_socket_buffer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for cppu\+::Socket\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{classcppu_1_1_socket_buffer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a1d6a8ae90bfcb69e6b3d2b9f97e3dc40}\label{classcppu_1_1_socket_buffer_a1d6a8ae90bfcb69e6b3d2b9f97e3dc40}} 
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_a1d6a8ae90bfcb69e6b3d2b9f97e3dc40}{Socket\+Buffer}} (\mbox{\hyperlink{classcppu_1_1_socket}{Socket}} $\ast$\mbox{\hyperlink{classcppu_1_1_socket_buffer_aab887b32ee999bfdd01c9a491c04bd61}{socket}}, size\+\_\+t input\+Buffer\+Size=8192, size\+\_\+t ouput\+Buffer\+Size=8192)
+\begin{DoxyCompactList}\small\item\em constructor. {\itshape socket} must be a connected T\+C\+P/\+IP \mbox{\hyperlink{classcppu_1_1_socket}{Socket}} (i.\+e. of S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+AM type) that must {\itshape not} be deleted while the \mbox{\hyperlink{classcppu_1_1_socket_buffer}{Socket\+Buffer}} is used. {\itshape input\+Buffer\+Size} and {\itshape ouput\+Buffer\+Size} are the sizes of the buffers that used internally for exchanging the data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_ae8e387747f17f4ff3bfe036ccf11e89b}\label{classcppu_1_1_socket_buffer_ae8e387747f17f4ff3bfe036ccf11e89b}} 
+{\bfseries Socket\+Buffer} (\mbox{\hyperlink{classcppu_1_1_socket}{Socket}} \&\mbox{\hyperlink{classcppu_1_1_socket_buffer_aab887b32ee999bfdd01c9a491c04bd61}{socket}}, size\+\_\+t input\+Buffer\+Size=8192, size\+\_\+t ouput\+Buffer\+Size=8192)
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_aab887b32ee999bfdd01c9a491c04bd61}\label{classcppu_1_1_socket_buffer_aab887b32ee999bfdd01c9a491c04bd61}} 
+\mbox{\hyperlink{classcppu_1_1_socket}{Socket}} $\ast$ \mbox{\hyperlink{classcppu_1_1_socket_buffer_aab887b32ee999bfdd01c9a491c04bd61}{socket}} ()
+\begin{DoxyCompactList}\small\item\em returns the associated socket. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a8b859d44a13a2f2583ab5eb5028743d4}\label{classcppu_1_1_socket_buffer_a8b859d44a13a2f2583ab5eb5028743d4}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_buffer_a8b859d44a13a2f2583ab5eb5028743d4}{input\+Separator}} () const
+\begin{DoxyCompactList}\small\item\em returns the input separator. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a419080a66a7e26ca508475057d056615}\label{classcppu_1_1_socket_buffer_a419080a66a7e26ca508475057d056615}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_buffer_a419080a66a7e26ca508475057d056615}{output\+Separator}} () const
+\begin{DoxyCompactList}\small\item\em returns the output separator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classcppu_1_1_socket_buffer_acadf4540c1e3eba67b014753b84b482c}{set\+Input\+Separator}} (int separ)
+\begin{DoxyCompactList}\small\item\em changes the input separator. This function specifies the character(s) used by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} to separate successive lines\+: \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classcppu_1_1_socket_buffer_a0e5e6a9ce3bda28b65c559c8b3c91b0f}{set\+Output\+Separator}} (int separ)
+\begin{DoxyCompactList}\small\item\em changes the output separator. This function specifies the character(s) used by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} to separate successive lines\+: \end{DoxyCompactList}\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line}} (std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Reads a line of text from a connected socket. \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} receives one line of text sent by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} on the other side. The text is stored in {\itshape str}. This method blocks until the complete text line is received. \end{DoxyCompactList}\item 
+virtual ssize\+\_\+t \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line}} (const std\+::string \&str)
+\begin{DoxyCompactList}\small\item\em Sends a line of text to a connected socket. \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} sends one line of text that will be received by a single call to \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} on the other side (see note below). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a27de273ae2defbf3a5cc308310b9835e}\label{classcppu_1_1_socket_buffer_a27de273ae2defbf3a5cc308310b9835e}} 
+virtual ssize\+\_\+t {\bfseries read} (char $\ast$buffer, size\+\_\+t len)
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_ab4ed032f329be2f6ecd0cba5fcd0518d}\label{classcppu_1_1_socket_buffer_ab4ed032f329be2f6ecd0cba5fcd0518d}} 
+virtual ssize\+\_\+t {\bfseries write} (const char $\ast$str, size\+\_\+t len)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_ae634cbe12f6688a8d64c4579299e9802}\label{classcppu_1_1_socket_buffer_ae634cbe12f6688a8d64c4579299e9802}} 
+virtual bool {\bfseries retrieve\+Line} (std\+::string \&str, ssize\+\_\+t received)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_af52d0e7a5fb70ad371693c2e7f9f056b}\label{classcppu_1_1_socket_buffer_af52d0e7a5fb70ad371693c2e7f9f056b}} 
+size\+\_\+t {\bfseries \+\_\+in\+Size}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_afa2daeed2c8538030353382f48269896}\label{classcppu_1_1_socket_buffer_afa2daeed2c8538030353382f48269896}} 
+size\+\_\+t {\bfseries \+\_\+out\+Size}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a5bf8f3a5ef56fc6f15ade71fe55b049d}\label{classcppu_1_1_socket_buffer_a5bf8f3a5ef56fc6f15ade71fe55b049d}} 
+int {\bfseries \+\_\+in\+Sep}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a59b35cfa717476d18cc2e40c73073354}\label{classcppu_1_1_socket_buffer_a59b35cfa717476d18cc2e40c73073354}} 
+int {\bfseries \+\_\+out\+Sep}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_af60722acd94826d780bbb2477667d538}\label{classcppu_1_1_socket_buffer_af60722acd94826d780bbb2477667d538}} 
+\mbox{\hyperlink{classcppu_1_1_socket}{Socket}} $\ast$ {\bfseries \+\_\+sock}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_adb5986d6297496a1f92a30b1b3923072}\label{classcppu_1_1_socket_buffer_adb5986d6297496a1f92a30b1b3923072}} 
+struct \mbox{\hyperlink{structcppu_1_1_input_buffer}{Input\+Buffer}} $\ast$ {\bfseries \+\_\+in}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Preserves record boundaries when exchanging data between connected T\+C\+P/\+IP sockets. This class ensures that one call to \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} corresponds to one and exactly one call to \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} on the other side. This differs from the behavior of \mbox{\hyperlink{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}{Socket\+::send()}} and \mbox{\hyperlink{classcppu_1_1_socket_a37c382af52cc02f92c0e19a0c6e0e04f}{Socket\+::receive()}} because T\+C\+P/\+IP connected sockets do not preserve record boundaries. \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} and \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} solve this problem by automatically adding and searching for a separator between successive lines. 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_acadf4540c1e3eba67b014753b84b482c}{set\+Input\+Separator()}} and \mbox{\hyperlink{classcppu_1_1_socket_buffer_a0e5e6a9ce3bda28b65c559c8b3c91b0f}{set\+Output\+Separator()}}. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}\label{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}} 
+\index{cppu::SocketBuffer@{cppu::SocketBuffer}!readLine@{readLine}}
+\index{readLine@{readLine}!cppu::SocketBuffer@{cppu::SocketBuffer}}
+\subsubsection{\texorpdfstring{readLine()}{readLine()}}
+{\footnotesize\ttfamily ssize\+\_\+t cppu\+::\+Socket\+Buffer\+::read\+Line (\begin{DoxyParamCaption}\item[{std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reads a line of text from a connected socket. \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} receives one line of text sent by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} on the other side. The text is stored in {\itshape str}. This method blocks until the complete text line is received. 
+
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} relies on a separator (by default, ~\newline
+, ~\newline
+ or ~\newline
+\textbackslash{}r, \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_acadf4540c1e3eba67b014753b84b482c}{set\+Input\+Separator()}}. This separator is automatically removed (it is not stored in {\itshape str}).
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of bytes that were received or\+:
+\begin{DoxyItemize}
+\item 0\+: shutdown\+Output() was called on the other side
+\item Socket\+::\+Failed (-\/1)\+: a connection error occured
+\item Socket\+::\+Invalid\+Socket (-\/2)\+: the socket is invalid. The separator is counted in the value returned by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}}. 
+\end{DoxyItemize}
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcppu_1_1_socket_buffer_acadf4540c1e3eba67b014753b84b482c}\label{classcppu_1_1_socket_buffer_acadf4540c1e3eba67b014753b84b482c}} 
+\index{cppu::SocketBuffer@{cppu::SocketBuffer}!setInputSeparator@{setInputSeparator}}
+\index{setInputSeparator@{setInputSeparator}!cppu::SocketBuffer@{cppu::SocketBuffer}}
+\subsubsection{\texorpdfstring{setInputSeparator()}{setInputSeparator()}}
+{\footnotesize\ttfamily void cppu\+::\+Socket\+Buffer\+::set\+Input\+Separator (\begin{DoxyParamCaption}\item[{int}]{separ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+changes the input separator. This function specifies the character(s) used by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} to separate successive lines\+: 
+
+
+\begin{DoxyItemize}
+\item if {\itshape separ} $>$= 0, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} searches for {\itshape separ} to separate lines,
+\item if {\itshape separ} $<$ 0, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} searches for ~\newline
+, \textbackslash{}r or ~\newline
+\textbackslash{}r. By default, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} for ~\newline
+, \textbackslash{}r or ~\newline
+\textbackslash{}r. \begin{DoxyNote}{Note}
+If the input separator is changed, the output separator must be changed accordingly on the other side of the socket. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_a0e5e6a9ce3bda28b65c559c8b3c91b0f}{set\+Output\+Separator()}}. 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a0e5e6a9ce3bda28b65c559c8b3c91b0f}\label{classcppu_1_1_socket_buffer_a0e5e6a9ce3bda28b65c559c8b3c91b0f}} 
+\index{cppu::SocketBuffer@{cppu::SocketBuffer}!setOutputSeparator@{setOutputSeparator}}
+\index{setOutputSeparator@{setOutputSeparator}!cppu::SocketBuffer@{cppu::SocketBuffer}}
+\subsubsection{\texorpdfstring{setOutputSeparator()}{setOutputSeparator()}}
+{\footnotesize\ttfamily void cppu\+::\+Socket\+Buffer\+::set\+Output\+Separator (\begin{DoxyParamCaption}\item[{int}]{separ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+changes the output separator. This function specifies the character(s) used by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} to separate successive lines\+: 
+
+
+\begin{DoxyItemize}
+\item if {\itshape separ} $>$= 0, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} inserts {\itshape separ} between successive lines,
+\item if {\itshape separ} $<$ 0, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} inserts ~\newline
+\textbackslash{}r between successive lines. By default, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} inserts ~\newline
+. \begin{DoxyNote}{Note}
+If the output separator is changed, the input separator must be changed accordingly on the other side of the socket. 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_acadf4540c1e3eba67b014753b84b482c}{set\+Input\+Separator()}}. 
+\end{DoxySeeAlso}
+
+\end{DoxyItemize}\mbox{\Hypertarget{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}\label{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}} 
+\index{cppu::SocketBuffer@{cppu::SocketBuffer}!writeLine@{writeLine}}
+\index{writeLine@{writeLine}!cppu::SocketBuffer@{cppu::SocketBuffer}}
+\subsubsection{\texorpdfstring{writeLine()}{writeLine()}}
+{\footnotesize\ttfamily ssize\+\_\+t cppu\+::\+Socket\+Buffer\+::write\+Line (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Sends a line of text to a connected socket. \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} sends one line of text that will be received by a single call to \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} on the other side (see note below). 
+
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}} relies on a separator (~\newline
+ by default, \begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer_a0e5e6a9ce3bda28b65c559c8b3c91b0f}{set\+Output\+Separator()}}) that is automatically inserted between successive lines ().
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of bytes that were sent or\+:
+\begin{DoxyItemize}
+\item 0\+: shutdown\+Input() was called on the other side
+\item Socket\+::\+Failed (-\/1)\+: a connection error occured
+\item Socket\+::\+Invalid\+Socket (-\/2)\+: the socket is invalid. The separator is counted in the value returned by \mbox{\hyperlink{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59}{write\+Line()}}.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+if {\itshape str} constains occurences of the separator, \mbox{\hyperlink{classcppu_1_1_socket_buffer_a222769d3776b9cbd3a727ee1f0e60358}{read\+Line()}} will be called several times on the other side. 
+\end{DoxyNote}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{classcppu_1_1_socket_buffer_a92ae0351aaee8719d34e8c4618495d59_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cppsocket.\+h\item 
+cppsocket.\+cpp\end{DoxyCompactItemize}

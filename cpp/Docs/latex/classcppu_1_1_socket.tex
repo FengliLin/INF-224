@@ -1,0 +1,327 @@
+\hypertarget{classcppu_1_1_socket}{}\section{cppu\+::Socket Class Reference}
+\label{classcppu_1_1_socket}\index{cppu::Socket@{cppu::Socket}}
+
+
+T\+C\+P/\+IP or U\+D\+P/\+Datagram socket. This class encapsulates a T\+C\+P/\+IP or U\+D\+P/\+Datagram socket. A\+F\+\_\+\+I\+N\+ET connections following the I\+Pv4 Internet protocol are supported.  
+
+
+
+
+{\ttfamily \#include $<$cppsocket.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}{Errors}} \{ {\bfseries Failed} = -\/1, 
+{\bfseries Invalid\+Socket} = -\/2, 
+{\bfseries Unknown\+Host} = -\/3
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classcppu_1_1_socket}{Socket}} errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classcppu_1_1_socket_ae73b9b629fe443f650203d938f61a279}{Socket}} (int type=S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+AM)
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{classcppu_1_1_socket}{Socket}}. Creates a A\+F\+\_\+\+I\+N\+ET socket using the I\+Pv4 Internet protocol. Type can be\+: \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a8404e4e80cc625a4be32aacc879bb237}\label{classcppu_1_1_socket_a8404e4e80cc625a4be32aacc879bb237}} 
+\mbox{\hyperlink{classcppu_1_1_socket_a8404e4e80cc625a4be32aacc879bb237}{Socket}} (int type, int sockfd)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classcppu_1_1_socket}{Socket}} object from an existing socket file descriptor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_ae26733a0b7d8a5fb5544d2d069152de7}\label{classcppu_1_1_socket_ae26733a0b7d8a5fb5544d2d069152de7}} 
+virtual \mbox{\hyperlink{classcppu_1_1_socket_ae26733a0b7d8a5fb5544d2d069152de7}{$\sim$\+Socket}} ()
+\begin{DoxyCompactList}\small\item\em Destructor (closes the socket). \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classcppu_1_1_socket_a7b876dcaff0babaffde41575f9b19d64}{bind}} (int port)
+\begin{DoxyCompactList}\small\item\em Assigns the socket to the local address. Typically used for U\+D\+P/\+Datagram sockets,. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classcppu_1_1_socket_a5698a3a7c6c203676c6de5e5559a0a7f}{bind}} (const std\+::string \&host, int port)
+\begin{DoxyCompactList}\small\item\em Assigns the socket to an address. Typically used for U\+D\+P/\+Datagram sockets,. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classcppu_1_1_socket_af6db3840caee709738f0e2a9ff814e5d}{connect}} (const std\+::string \&host, int port)
+\begin{DoxyCompactList}\small\item\em Connects the socket to an address. Typically used for T\+C\+P/\+IP sockets on the client side,. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classcppu_1_1_socket_ab958ef8a0f0495cf3a1c57a2ad4a34fc}{close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the socket. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a2eeeafa5f475525e1cd8116721723410}\label{classcppu_1_1_socket_a2eeeafa5f475525e1cd8116721723410}} 
+bool \mbox{\hyperlink{classcppu_1_1_socket_a2eeeafa5f475525e1cd8116721723410}{is\+Closed}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if the socket has been closed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a06a8fcd9518e6a3e8b33bb64f7fb9036}\label{classcppu_1_1_socket_a06a8fcd9518e6a3e8b33bb64f7fb9036}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_a06a8fcd9518e6a3e8b33bb64f7fb9036}{descriptor}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Unix descriptor of the socket. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}{send}} (const void $\ast$buf, size\+\_\+t len, int flags=0)
+\begin{DoxyCompactList}\small\item\em Sends data to a connected socket. Sends {\itshape len} bytes to a T\+C\+P/\+IP socket using the Unix \mbox{\hyperlink{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}{send()}} function (. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classcppu_1_1_socket_a37c382af52cc02f92c0e19a0c6e0e04f}{receive}} (void $\ast$buf, size\+\_\+t len, int flags=0)
+\begin{DoxyCompactList}\small\item\em Receives data from a connected socket. Reads at most {\itshape len} bytes from a T\+C\+P/\+IP socket using the Unix recv() function. By default, this function blocks the caller until data is present (. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classcppu_1_1_socket_a31ff5137959aa4e52d4bcdd53e0b0069}{send\+To}} (const void $\ast$buf, size\+\_\+t len, int flags, const struct sockaddr $\ast$dest\+\_\+addr, socklen\+\_\+t addrlen)
+\begin{DoxyCompactList}\small\item\em Sends data to a datagram socket. Sends {\itshape len} bytes to a datagram socket using the Unix sendto() function. \end{DoxyCompactList}\item 
+ssize\+\_\+t \mbox{\hyperlink{classcppu_1_1_socket_abd460be82deeb29e730fc83f871e51c4}{receive\+From}} (void $\ast$buf, size\+\_\+t len, int flags, struct sockaddr $\ast$src\+\_\+addr, socklen\+\_\+t $\ast$addrlen)
+\begin{DoxyCompactList}\small\item\em Receives data from datagram socket. Reads at most {\itshape len} bytes from a datagram socket using the Unix recvfrom() function. By default, this function blocks the caller until data is present (. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a06c6838f267e5a0ba74558da946efb90}\label{classcppu_1_1_socket_a06c6838f267e5a0ba74558da946efb90}} 
+virtual void \mbox{\hyperlink{classcppu_1_1_socket_a06c6838f267e5a0ba74558da946efb90}{shutdown\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Disables further receive operations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a97ee9ef3bf9fdecd6ae6f2b583b34d0e}\label{classcppu_1_1_socket_a97ee9ef3bf9fdecd6ae6f2b583b34d0e}} 
+virtual void \mbox{\hyperlink{classcppu_1_1_socket_a97ee9ef3bf9fdecd6ae6f2b583b34d0e}{shutdown\+Output}} ()
+\begin{DoxyCompactList}\small\item\em Disables further send operations. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_af172d5c78f63713988b0a6bf66851be7}\label{classcppu_1_1_socket_af172d5c78f63713988b0a6bf66851be7}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_af172d5c78f63713988b0a6bf66851be7}{set\+Receive\+Buffer\+Size}} (int size)
+\begin{DoxyCompactList}\small\item\em Sets the size of the T\+C\+P/\+IP input buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a27b7fe34e172ad1f97c304d2786f624a}\label{classcppu_1_1_socket_a27b7fe34e172ad1f97c304d2786f624a}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_a27b7fe34e172ad1f97c304d2786f624a}{set\+Reuse\+Address}} (bool)
+\begin{DoxyCompactList}\small\item\em Enables/disables the S\+O\+\_\+\+R\+E\+U\+S\+E\+A\+D\+DR socket option. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_aefda954454d860fa6a6d41b3d5cd26db}\label{classcppu_1_1_socket_aefda954454d860fa6a6d41b3d5cd26db}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_aefda954454d860fa6a6d41b3d5cd26db}{set\+Send\+Buffer\+Size}} (int size)
+\begin{DoxyCompactList}\small\item\em Sets the size of the T\+C\+P/\+IP output buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_ae87eb0335c072f765bf2b6a47162e7f5}\label{classcppu_1_1_socket_ae87eb0335c072f765bf2b6a47162e7f5}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_ae87eb0335c072f765bf2b6a47162e7f5}{set\+So\+Linger}} (bool, int linger)
+\begin{DoxyCompactList}\small\item\em Enables/disables S\+O\+\_\+\+L\+I\+N\+G\+ER with the specified linger time in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_ae5dea30a1cae2dbdbdaf11a9f7ffa444}\label{classcppu_1_1_socket_ae5dea30a1cae2dbdbdaf11a9f7ffa444}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_ae5dea30a1cae2dbdbdaf11a9f7ffa444}{set\+So\+Timeout}} (int timeout)
+\begin{DoxyCompactList}\small\item\em Enables/disables S\+O\+\_\+\+T\+I\+M\+E\+O\+UT with the specified timeout (in milliseconds). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a6b29a9e12926b07f65b8dc52176131c5}\label{classcppu_1_1_socket_a6b29a9e12926b07f65b8dc52176131c5}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_a6b29a9e12926b07f65b8dc52176131c5}{set\+Tcp\+No\+Delay}} (bool)
+\begin{DoxyCompactList}\small\item\em Enables/disables T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+AY (turns on/off T\+CP coalescence). \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a2058e95277c8db85c9ceb3794dc52fd4}\label{classcppu_1_1_socket_a2058e95277c8db85c9ceb3794dc52fd4}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_a2058e95277c8db85c9ceb3794dc52fd4}{get\+Receive\+Buffer\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the size of the T\+C\+P/\+IP input buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a67b90a17ea69d3a94763d9e12eba0255}\label{classcppu_1_1_socket_a67b90a17ea69d3a94763d9e12eba0255}} 
+bool \mbox{\hyperlink{classcppu_1_1_socket_a67b90a17ea69d3a94763d9e12eba0255}{get\+Reuse\+Address}} () const
+\begin{DoxyCompactList}\small\item\em Gets S\+O\+\_\+\+R\+E\+U\+S\+E\+A\+D\+DR state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_ab36efcea3c1d709e95a83fcd4a36af7c}\label{classcppu_1_1_socket_ab36efcea3c1d709e95a83fcd4a36af7c}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_ab36efcea3c1d709e95a83fcd4a36af7c}{get\+Send\+Buffer\+Size}} () const
+\begin{DoxyCompactList}\small\item\em Gets the size of the T\+C\+P/\+IP output buffer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_ae9feee18305bbfb565180b1e7509329d}\label{classcppu_1_1_socket_ae9feee18305bbfb565180b1e7509329d}} 
+bool \mbox{\hyperlink{classcppu_1_1_socket_ae9feee18305bbfb565180b1e7509329d}{get\+So\+Linger}} (int \&linger) const
+\begin{DoxyCompactList}\small\item\em Gets S\+O\+\_\+\+L\+I\+N\+G\+ER state and the specified linger time in seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a2ce0bce7a0ad0ea37b9c8b9a3b261662}\label{classcppu_1_1_socket_a2ce0bce7a0ad0ea37b9c8b9a3b261662}} 
+int \mbox{\hyperlink{classcppu_1_1_socket_a2ce0bce7a0ad0ea37b9c8b9a3b261662}{get\+So\+Timeout}} () const
+\begin{DoxyCompactList}\small\item\em Gets S\+O\+\_\+\+T\+I\+M\+E\+O\+UT value. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_ae92a92e5ea17b4f1ccc17e614548053c}\label{classcppu_1_1_socket_ae92a92e5ea17b4f1ccc17e614548053c}} 
+bool \mbox{\hyperlink{classcppu_1_1_socket_ae92a92e5ea17b4f1ccc17e614548053c}{get\+Tcp\+No\+Delay}} () const
+\begin{DoxyCompactList}\small\item\em Gets T\+C\+P\+\_\+\+N\+O\+D\+E\+L\+AY state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a73d529332eae6048b321b381354e6bea}\label{classcppu_1_1_socket_a73d529332eae6048b321b381354e6bea}} 
+virtual int \mbox{\hyperlink{classcppu_1_1_socket_a73d529332eae6048b321b381354e6bea}{set\+Local\+Address}} (struct sockaddr\+\_\+in \&addr, int port)
+\begin{DoxyCompactList}\small\item\em Initializes a local I\+N\+E\+T4 address, returns 0 on success, -\/1 otherwise. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_aec26c9f6372f7ed2ec383fc98cbb6458}\label{classcppu_1_1_socket_aec26c9f6372f7ed2ec383fc98cbb6458}} 
+virtual int \mbox{\hyperlink{classcppu_1_1_socket_aec26c9f6372f7ed2ec383fc98cbb6458}{set\+Address}} (struct sockaddr\+\_\+in \&addr, const std\+::string \&host, int port)
+\begin{DoxyCompactList}\small\item\em Initializes a remote I\+N\+E\+T4 address, returns 0 on success, -\/1 otherwise. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classcppu_1_1_socket_a11a8bb11feaafab939278a8285afa567}\label{classcppu_1_1_socket_a11a8bb11feaafab939278a8285afa567}} 
+class {\bfseries Server\+Socket}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+T\+C\+P/\+IP or U\+D\+P/\+Datagram socket. This class encapsulates a T\+C\+P/\+IP or U\+D\+P/\+Datagram socket. A\+F\+\_\+\+I\+N\+ET connections following the I\+Pv4 Internet protocol are supported. 
+
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{classcppu_1_1_server_socket}{Server\+Socket}} should be used on the server side (
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_server_socket}{Server\+Socket}}). 
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+S\+I\+G\+P\+I\+PE signals are ignored when using Linux, B\+SD or M\+A\+C\+O\+SX. 
+
+T\+C\+P/\+IP sockets do not preserve record boundaries, 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer}{Socket\+Buffer}} for a solution. 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}\label{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}} 
+\index{cppu::Socket@{cppu::Socket}!Errors@{Errors}}
+\index{Errors@{Errors}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{Errors}{Errors}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}{cppu\+::\+Socket\+::\+Errors}}}
+
+
+
+\mbox{\hyperlink{classcppu_1_1_socket}{Socket}} errors. 
+
+
+\begin{DoxyItemize}
+\item Socket\+::\+Failed (-\/1)\+: connection error (could not connect, could not bind, etc.)
+\item Socket\+::\+Invalid\+Socket (-\/2)\+: invalid socket or wrong socket type
+\item Socket\+::\+Unknown\+Host (-\/3)\+: could not reach host 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classcppu_1_1_socket_ae73b9b629fe443f650203d938f61a279}\label{classcppu_1_1_socket_ae73b9b629fe443f650203d938f61a279}} 
+\index{cppu::Socket@{cppu::Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{Socket()}{Socket()}}
+{\footnotesize\ttfamily cppu\+::\+Socket\+::\+Socket (\begin{DoxyParamCaption}\item[{int}]{type = {\ttfamily SOCK\+\_\+STREAM} }\end{DoxyParamCaption})}
+
+
+
+Creates a new \mbox{\hyperlink{classcppu_1_1_socket}{Socket}}. Creates a A\+F\+\_\+\+I\+N\+ET socket using the I\+Pv4 Internet protocol. Type can be\+: 
+
+
+\begin{DoxyItemize}
+\item S\+O\+C\+K\+\_\+\+S\+T\+R\+E\+AM (the default) for T\+C\+P/\+IP connected stream sockets
+\item S\+O\+C\+K\+\_\+\+D\+G\+R\+AM for U\+D\+P/datagram sockets 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classcppu_1_1_socket_a7b876dcaff0babaffde41575f9b19d64}\label{classcppu_1_1_socket_a7b876dcaff0babaffde41575f9b19d64}} 
+\index{cppu::Socket@{cppu::Socket}!bind@{bind}}
+\index{bind@{bind}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int cppu\+::\+Socket\+::bind (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assigns the socket to the local address. Typically used for U\+D\+P/\+Datagram sockets,. 
+
+\begin{DoxySeeAlso}{See also}
+Unix \mbox{\hyperlink{classcppu_1_1_socket_a7b876dcaff0babaffde41575f9b19d64}{bind()}} system call for details. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative value on error which is one of \mbox{\hyperlink{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}{Socket\+::\+Errors}} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcppu_1_1_socket_a7b876dcaff0babaffde41575f9b19d64_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcppu_1_1_socket_a5698a3a7c6c203676c6de5e5559a0a7f}\label{classcppu_1_1_socket_a5698a3a7c6c203676c6de5e5559a0a7f}} 
+\index{cppu::Socket@{cppu::Socket}!bind@{bind}}
+\index{bind@{bind}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{bind()}{bind()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int cppu\+::\+Socket\+::bind (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Assigns the socket to an address. Typically used for U\+D\+P/\+Datagram sockets,. 
+
+\begin{DoxySeeAlso}{See also}
+Unix \mbox{\hyperlink{classcppu_1_1_socket_a7b876dcaff0babaffde41575f9b19d64}{bind()}} system call for details. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative value on error which is one of \mbox{\hyperlink{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}{Socket\+::\+Errors}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcppu_1_1_socket_ab958ef8a0f0495cf3a1c57a2ad4a34fc}\label{classcppu_1_1_socket_ab958ef8a0f0495cf3a1c57a2ad4a34fc}} 
+\index{cppu::Socket@{cppu::Socket}!close@{close}}
+\index{close@{close}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily int cppu\+::\+Socket\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Closes the socket. 
+
+\begin{DoxyReturn}{Returns}
+0 on success and -\/1 on error. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcppu_1_1_socket_af6db3840caee709738f0e2a9ff814e5d}\label{classcppu_1_1_socket_af6db3840caee709738f0e2a9ff814e5d}} 
+\index{cppu::Socket@{cppu::Socket}!connect@{connect}}
+\index{connect@{connect}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily int cppu\+::\+Socket\+::connect (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host,  }\item[{int}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Connects the socket to an address. Typically used for T\+C\+P/\+IP sockets on the client side,. 
+
+\begin{DoxySeeAlso}{See also}
+Unix \mbox{\hyperlink{classcppu_1_1_socket_af6db3840caee709738f0e2a9ff814e5d}{connect()}} system call for details and \mbox{\hyperlink{classcppu_1_1_server_socket}{Server\+Socket}} for T\+C\+P/\+IP sockets on the server side. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+0 on success or a negative value on error which is one of \mbox{\hyperlink{classcppu_1_1_socket_a49ea5cb079bd7ae97ecf7eb30c9d9e5f}{Socket\+::\+Errors}} 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classcppu_1_1_socket_af6db3840caee709738f0e2a9ff814e5d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classcppu_1_1_socket_a37c382af52cc02f92c0e19a0c6e0e04f}\label{classcppu_1_1_socket_a37c382af52cc02f92c0e19a0c6e0e04f}} 
+\index{cppu::Socket@{cppu::Socket}!receive@{receive}}
+\index{receive@{receive}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily ssize\+\_\+t cppu\+::\+Socket\+::receive (\begin{DoxyParamCaption}\item[{void $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{flags = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Receives data from a connected socket. Reads at most {\itshape len} bytes from a T\+C\+P/\+IP socket using the Unix recv() function. By default, this function blocks the caller until data is present (. 
+
+\begin{DoxySeeAlso}{See also}
+recv() for details).
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of bytes that were received or\+:
+\begin{DoxyItemize}
+\item 0\+: {\itshape len} is 0 or \mbox{\hyperlink{classcppu_1_1_socket_a97ee9ef3bf9fdecd6ae6f2b583b34d0e}{shutdown\+Output()}} was called on the other side,
+\item Socket\+::\+Failed (-\/1)\+: a connection error occured.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+that T\+C\+P/\+IP sockets do not preserve record boundaries, 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer}{Socket\+Buffer}} for a solution. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcppu_1_1_socket_abd460be82deeb29e730fc83f871e51c4}\label{classcppu_1_1_socket_abd460be82deeb29e730fc83f871e51c4}} 
+\index{cppu::Socket@{cppu::Socket}!receiveFrom@{receiveFrom}}
+\index{receiveFrom@{receiveFrom}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{receiveFrom()}{receiveFrom()}}
+{\footnotesize\ttfamily ssize\+\_\+t cppu\+::\+Socket\+::receive\+From (\begin{DoxyParamCaption}\item[{void $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{flags,  }\item[{struct sockaddr $\ast$}]{src\+\_\+addr,  }\item[{socklen\+\_\+t $\ast$}]{addrlen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Receives data from datagram socket. Reads at most {\itshape len} bytes from a datagram socket using the Unix recvfrom() function. By default, this function blocks the caller until data is present (. 
+
+\begin{DoxySeeAlso}{See also}
+recvfrom() for details). 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of bytes which was received or Socket\+::\+Failed (-\/1) if an error occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}\label{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}} 
+\index{cppu::Socket@{cppu::Socket}!send@{send}}
+\index{send@{send}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily ssize\+\_\+t cppu\+::\+Socket\+::send (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{flags = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends data to a connected socket. Sends {\itshape len} bytes to a T\+C\+P/\+IP socket using the Unix \mbox{\hyperlink{classcppu_1_1_socket_aeac77f859159715e2d63a5a0dc118788}{send()}} function (. 
+
+\begin{DoxySeeAlso}{See also}
+recv() for details)
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+the number of bytes that were sent or\+:
+\begin{DoxyItemize}
+\item {\itshape len} is 0 or \mbox{\hyperlink{classcppu_1_1_socket_a06c6838f267e5a0ba74558da946efb90}{shutdown\+Input()}} was called on the other side,
+\item Socket\+::\+Failed (-\/1)\+: a connection error occured.
+\end{DoxyItemize}
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+that T\+C\+P/\+IP sockets do not preserve record boundaries, 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classcppu_1_1_socket_buffer}{Socket\+Buffer}} for a solution. 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classcppu_1_1_socket_a31ff5137959aa4e52d4bcdd53e0b0069}\label{classcppu_1_1_socket_a31ff5137959aa4e52d4bcdd53e0b0069}} 
+\index{cppu::Socket@{cppu::Socket}!sendTo@{sendTo}}
+\index{sendTo@{sendTo}!cppu::Socket@{cppu::Socket}}
+\subsubsection{\texorpdfstring{sendTo()}{sendTo()}}
+{\footnotesize\ttfamily ssize\+\_\+t cppu\+::\+Socket\+::send\+To (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buf,  }\item[{size\+\_\+t}]{len,  }\item[{int}]{flags,  }\item[{const struct sockaddr $\ast$}]{dest\+\_\+addr,  }\item[{socklen\+\_\+t}]{addrlen }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sends data to a datagram socket. Sends {\itshape len} bytes to a datagram socket using the Unix sendto() function. 
+
+\begin{DoxyReturn}{Returns}
+the number of bytes that were sent or Socket\+::\+Failed (-\/1) if an error occurred. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+cppsocket.\+h\item 
+cppsocket.\+cpp\end{DoxyCompactItemize}

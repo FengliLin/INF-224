@@ -1,0 +1,9 @@
+<map id="Database" name="Database">
+<area shape="rect" id="node1" title=" " alt="" coords="70,225,149,251"/>
+<area shape="rect" id="node2" href="$class_photo.html" title=" " alt="" coords="5,152,62,177"/>
+<area shape="rect" id="node3" href="$class_multimedia.html" title=" " alt="" coords="23,5,108,31"/>
+<area shape="rect" id="node5" href="$class_video.html" title=" " alt="" coords="71,79,126,104"/>
+<area shape="rect" id="node4" href="$class_film.html" title=" " alt="" coords="86,152,133,177"/>
+<area shape="rect" id="node6" href="$class_group.html" title=" " alt="" coords="180,152,239,177"/>
+<area shape="rect" id="node7" title=" " alt="" coords="150,79,317,104"/>
+</map>

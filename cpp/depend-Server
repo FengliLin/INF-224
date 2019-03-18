@@ -1,0 +1,12 @@
+Multimedia.o: Multimedia.cpp Multimedia.hpp
+Film.o: Film.cpp Film.hpp Video.hpp Multimedia.hpp
+Groupe.o: Groupe.cpp Groupe.hpp Multimedia.hpp Video.hpp Photo.hpp \
+  Film.hpp
+Database.o: Database.cpp Database.hpp Photo.hpp Multimedia.hpp Film.hpp \
+  Video.hpp Groupe.hpp
+Photo.o: Photo.cpp Photo.hpp Multimedia.hpp
+Video.o: Video.cpp Video.hpp Multimedia.hpp
+server.o: server.cpp tcpserver.h cppsocket.h Database.hpp Photo.hpp \
+  Multimedia.hpp Film.hpp Video.hpp Groupe.hpp
+tcpserver.o: tcpserver.cpp tcpserver.h cppsocket.h
+cppsocket.o: cppsocket.cpp cppsocket.h

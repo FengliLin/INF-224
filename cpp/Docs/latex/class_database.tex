@@ -1,0 +1,58 @@
+\hypertarget{class_database}{}\section{Database Class Reference}
+\label{class_database}\index{Database@{Database}}
+
+
+Inheritance diagram for Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_database__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Database\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_database__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_database_a3982f27a56e988a32f0214cebeeab06e}\label{class_database_a3982f27a56e988a32f0214cebeeab06e}} 
+Photo\+Ptr {\bfseries add\+Photo} (const std\+::string name, const std\+::string path, const double length, const double width)
+\item 
+\mbox{\Hypertarget{class_database_a5526f474e8420d4897901397ea63c643}\label{class_database_a5526f474e8420d4897901397ea63c643}} 
+Video\+Ptr {\bfseries add\+Video} (const std\+::string name, const std\+::string path, const int duration)
+\item 
+\mbox{\Hypertarget{class_database_a3993bbc6d19dc7efc12981307f9b738e}\label{class_database_a3993bbc6d19dc7efc12981307f9b738e}} 
+Film\+Ptr {\bfseries add\+Film} (const std\+::string name, const std\+::string path, const int $\ast$durations, const int len)
+\item 
+\mbox{\Hypertarget{class_database_af84f62779188964e309e161c7bf3bf0c}\label{class_database_af84f62779188964e309e161c7bf3bf0c}} 
+Group\+Ptr {\bfseries add\+Group} (const std\+::string name)
+\item 
+\mbox{\Hypertarget{class_database_a8030fb643da67de36b7560faf3dc9efe}\label{class_database_a8030fb643da67de36b7560faf3dc9efe}} 
+void {\bfseries find\+Media} (const std\+::string key, std\+::ostream \&s)
+\item 
+\mbox{\Hypertarget{class_database_ab21b31c38dbd80273688ed3b4584cff2}\label{class_database_ab21b31c38dbd80273688ed3b4584cff2}} 
+void {\bfseries find\+Group} (const std\+::string key, std\+::ostream \&s)
+\item 
+\mbox{\Hypertarget{class_database_a8f80c123a80742680318f55bfa9a929e}\label{class_database_a8f80c123a80742680318f55bfa9a929e}} 
+void {\bfseries play\+Media} (const std\+::string key, std\+::ostream \&s)
+\item 
+\mbox{\Hypertarget{class_database_aa5e19b1140c4ac493674b7654b3f8cb8}\label{class_database_aa5e19b1140c4ac493674b7654b3f8cb8}} 
+void {\bfseries delete\+Media} (const std\+::string key, std\+::ostream \&s)
+\item 
+\mbox{\Hypertarget{class_database_a18edec0c6894b0656cf50f741a670dd4}\label{class_database_a18edec0c6894b0656cf50f741a670dd4}} 
+void {\bfseries delete\+Group} (const std\+::string key, std\+::ostream \&s)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Database.\+hpp\item 
+Database.\+cpp\end{DoxyCompactItemize}
